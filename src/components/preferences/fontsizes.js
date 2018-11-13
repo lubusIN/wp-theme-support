@@ -6,23 +6,30 @@ import { ToggleControl, Button, PanelBody } from "@wordpress/components";
 /**
  * Internal dependencies
  */
-import FontSize from "../fontsizes/fontsize";
+import { PreferencesContext } from "../context";
+import FontSizeItems from "../fontsizes";
 
 const FontSizes = () => {
   return (
-    <PanelBody title="Font Sizes" initialOpen={true}>
-      <FontSize />
+    <PreferencesContext.Consumer>
+      {context => (
+        <PanelBody title="Font Sizes" initialOpen={true}>
+          <FontSizeItems sizes={context.preferences.fontsizes.sizes} />
+          <Button
+            isDefault
+            className="wp-editor-preferences-sidebar__fontsize-add"
+          >
+            Add
+          </Button>
 
-      <Button isDefault className="wp-editor-preferences-sidebar__fontsize-add">
-        Add
-      </Button>
-
-      <ToggleControl
-        label="Disable Custom Fontsize"
-        checked={true}
-        onChange={value => alert(value)}
-      />
-    </PanelBody>
+          <ToggleControl
+            label="Disable Custom Fontsize"
+            checked={context.preferences.fontsizes.custom}
+            onChange={value => value}
+          />
+        </PanelBody>
+      )}
+    </PreferencesContext.Consumer>
   );
 };
 

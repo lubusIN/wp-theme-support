@@ -10,7 +10,7 @@ import {
   PanelRow
 } from "@wordpress/components";
 
-const Color = () => {
+const Color = ({ code, name }) => {
   return (
     <PanelRow className="wp-editor-preferences-sidebar__color">
       <Dropdown
@@ -22,14 +22,21 @@ const Color = () => {
             isPrimary
             onClick={onToggle}
             aria-expanded={isOpen}
-            colorValue="#f00"
+            colorValue={code}
           />
         )}
-        renderContent={() => <ColorPicker />}
+        renderContent={() => (
+          <ColorPicker
+            color={code}
+            onChangeComplete={value => value}
+            disableAlpha
+          />
+        )}
       />
 
       <TextControl
         label="Name"
+        value={name}
         className="wp-editor-preferences-sidebar__color-name"
       />
       <IconButton

@@ -1,28 +1,29 @@
 /**
  * WordPress dependencies
  */
-import { ToggleControl, Button, PanelBody } from "@wordpress/components";
+import { ToggleControl, PanelBody } from "@wordpress/components";
 
 /**
  * Internal dependencies
  */
-import Color from "../colors/color";
+import { PreferencesContext } from "../context";
+import ColorList from "../colors";
 
 const Colors = () => {
   return (
-    <PanelBody title="Colors" initialOpen={false}>
-      <Color />
+    <PreferencesContext.Consumer>
+      {context => (
+        <PanelBody title="Colors" initialOpen={false}>
+          <ColorList shades={context.preferences.colors.shades} />
 
-      <Button isDefault className="wp-editor-preferences-sidebar__color-add">
-        Add
-      </Button>
-
-      <ToggleControl
-        label="Disable Custom Color"
-        checked={true}
-        onChange={value => alert(value)}
-      />
-    </PanelBody>
+          <ToggleControl
+            label="Disable Custom Color"
+            checked={context.preferences.colors.custom}
+            onChange={value => value}
+          />
+        </PanelBody>
+      )}
+    </PreferencesContext.Consumer>
   );
 };
 
