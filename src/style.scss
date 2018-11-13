@@ -1,0 +1,43 @@
+.wp-editor-preferences-sidebar{
+        .components-button-group,
+        &__color-add,
+        &__fontsize-add{
+                margin-top: 5px;
+                margin-bottom: 20px;
+        }
+
+        .component-color-indicator{
+                margin-left: 0;
+                width: 34px;
+                height: 29px;
+                margin-top: 22px;
+                border-radius: 6px;
+                cursor: pointer;
+                display: block;
+        }
+
+        &__color-remove,
+        &__fontsize-remove{
+                margin-top: 16px;
+        }
+
+        &__color-name{
+                width: 150px;
+        }
+
+        &__fontsize{
+                margin-top: 5px;
+        }
+
+        &__fontsize-size{
+                width: 50px;
+        }
+
+        &__fontsize-short-name{
+                width: 130px;
+        }
+
+        &__width-wide{
+                margin: auto 5px;
+        }
+}
