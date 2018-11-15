@@ -1,4 +1,9 @@
 /**
+ * External dependencies
+ */
+import { isEmpty } from "lodash";
+
+/**
  * WordPress dependencies
  */
 import { withState } from "@wordpress/compose";
@@ -71,6 +76,7 @@ const add = ({ onAdd, code, name, setState }) => {
             className="wp-editor-preferences-sidebar__color-save"
             label="Save"
             icon="yes"
+            disabled={isEmpty(name) || isEmpty(code)}
             isPrimary={true}
             onClick={() => {
               onAdd({ code, name });

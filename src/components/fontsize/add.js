@@ -1,4 +1,9 @@
 /**
+ * External dependencies
+ */
+import { isEmpty } from "lodash";
+
+/**
  * WordPress dependencies
  */
 import { withState } from "@wordpress/compose";
@@ -56,7 +61,7 @@ const add = ({ onAdd, name, short, size, setState }) => {
             />
             <IconButton
               className="wp-editor-preferences-sidebar__fontsize-save"
-              disabled={name && short && size}
+              disabled={isEmpty(name) || isEmpty(short) || isEmpty(size)}
               label="Save"
               icon="yes"
               isPrimary={true}
