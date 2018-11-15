@@ -9,6 +9,12 @@ import { ToggleControl, PanelBody } from "@wordpress/components";
 import { PreferencesContext } from "../context";
 
 const Styles = () => {
+  const update = (context, key, value) => {
+    let styles = context.preferences.styles;
+    styles[key] = value;
+    context.updatePreferences(styles);
+  };
+
   return (
     <PreferencesContext.Consumer>
       {context => (
@@ -16,13 +22,13 @@ const Styles = () => {
           <ToggleControl
             label="Editor Styles"
             checked={context.preferences.styles.editorStyles}
-            onChange={value => value}
+            onChange={value => update(context, "editorStyles", value)}
           />
 
           <ToggleControl
             label="Dark Editor Styles"
             checked={context.preferences.styles.darkEditorStyles}
-            onChange={value => value}
+            onChange={value => update(context, "darkEditorStyles", value)}
           />
         </PanelBody>
       )}

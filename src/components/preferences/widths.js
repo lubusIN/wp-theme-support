@@ -9,6 +9,12 @@ import { TextControl, PanelBody, PanelRow } from "@wordpress/components";
 import { PreferencesContext } from "../context";
 
 const Widths = () => {
+  const update = (context, key, value) => {
+    let widths = context.preferences.widths;
+    widths[key] = value;
+    context.updatePreferences(widths);
+  };
+
   return (
     <PreferencesContext.Consumer>
       {context => (
@@ -18,16 +24,19 @@ const Widths = () => {
               label="Main"
               value={context.preferences.widths.main}
               className="wp-editor-preferences-sidebar__width-main"
+              onChange={value => update(context, "main", value)}
             />
             <TextControl
               label="Wide"
               value={context.preferences.widths.wide}
               className="wp-editor-preferences-sidebar__width-wide"
+              onChange={value => update(context, "wide", value)}
             />
             <TextControl
               label="Full"
               value={context.preferences.widths.full}
               className="wp-editor-preferences-sidebar__width-full"
+              onChange={value => update(context, "full", value)}
             />
           </PanelRow>
         </PanelBody>

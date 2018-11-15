@@ -10,13 +10,18 @@ import {
   PanelRow
 } from "@wordpress/components";
 
-const Color = ({ code, name }) => {
+const Color = ({ code, name, onDelete, onUpdate }) => {
+  // Update color
+  const onChange = (key, value) => {
+    onUpdate(key, value);
+  };
+
   return (
     <PanelRow className="wp-editor-preferences-sidebar__color">
       <Dropdown
         className="wp-editor-preferences-sidebar__color-picker-container"
         contentClassName="wp-editor-preferences-sidebar__color-picker-content"
-        position="bottom right"
+        position="bottom left"
         renderToggle={({ isOpen, onToggle }) => (
           <ColorIndicator
             isPrimary
@@ -28,22 +33,23 @@ const Color = ({ code, name }) => {
         renderContent={() => (
           <ColorPicker
             color={code}
-            onChangeComplete={value => value}
+            onChangeComplete={value => onChange("code", value.hex)}
             disableAlpha
           />
         )}
       />
-
       <TextControl
         label="Name"
         value={name}
         className="wp-editor-preferences-sidebar__color-name"
+        onChange={value => onChange("name", value)}
       />
       <IconButton
-        className="wp-editor-preferences-sidebar__color-remove"
+        className="wp-editor-preferences-sidebar__color-remove button-link-delete"
         label="Remove"
-        icon="trash"
+        icon="dismiss"
         isDestructive={true}
+        onClick={onDelete}
       />
     </PanelRow>
   );

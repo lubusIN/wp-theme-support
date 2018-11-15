@@ -1,0 +1,11 @@
+.wp-editor-preferences-sidebar{
+    &__fontsize-save {
+        margin-top: 20px;
+    }
+
+    &__fontsize-add-content {
+        .wp-editor-preferences-sidebar__fontsize-wrapper{
+            padding: 6px;
+        }
+    }
+}

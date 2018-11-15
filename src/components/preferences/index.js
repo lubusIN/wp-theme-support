@@ -5,8 +5,8 @@ import { PreferencesProvider } from "../context";
 import General from "./general";
 import Colors from "./colors";
 import FontSizes from "./fontsizes";
-import Styles from "./Styles";
-import Widths from "./Widths";
+import Styles from "./styles";
+import Widths from "./widths";
 
 // Preference Component
 const Preferences = () => {

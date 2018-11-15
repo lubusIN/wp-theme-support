@@ -1,0 +1,23 @@
+.wp-editor-preferences-sidebar{
+    &__color-add-content{
+        .component-color-indicator{
+            margin-left: 0;
+            width: 34px;
+            height: 29px;
+            margin-top: 22px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: block;
+        }
+    }
+
+    &__color-save {
+        margin-top: 20px;
+    }
+
+    &__color-add-content {
+        .wp-editor-preferences-sidebar__color{
+            padding: 6px;
+        }
+    }
+}
