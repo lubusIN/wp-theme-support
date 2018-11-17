@@ -1,13 +1,7 @@
 /**
  * WordPress dependencies
  */
-import {
-  ToggleControl,
-  Button,
-  ButtonGroup,
-  BaseControl,
-  PanelBody
-} from "@wordpress/components";
+import { ToggleControl, PanelBody } from "@wordpress/components";
 
 /**
  * Internal dependencies
@@ -25,35 +19,12 @@ const General = () => {
     <PreferencesContext.Consumer>
       {context => (
         <PanelBody title="General" initialOpen={false}>
-          <BaseControl label="Wide Alignment">
-            <ButtonGroup>
-              <Button
-                isPrimary={
-                  context.preferences.general.wideAlignment === "normal"
-                }
-                isDefault={
-                  context.preferences.general.wideAlignment !== "normal"
-                }
-                onClick={() => update(context, "wideAlignment", "normal")}
-              >
-                Normal
-              </Button>
-              <Button
-                isPrimary={context.preferences.general.wideAlignment === "wide"}
-                isDefault={context.preferences.general.wideAlignment !== "wide"}
-                onClick={() => update(context, "wideAlignment", "wide")}
-              >
-                Wide
-              </Button>
-              <Button
-                isPrimary={context.preferences.general.wideAlignment === "full"}
-                isDefault={context.preferences.general.wideAlignment !== "full"}
-                onClick={() => update(context, "wideAlignment", "full")}
-              >
-                full
-              </Button>
-            </ButtonGroup>
-          </BaseControl>
+          <ToggleControl
+            label="Wide Alignment"
+            checked={context.preferences.general.wideAlignment}
+            onChange={value => update(context, "wideAlignment", value)}
+          />
+
           <ToggleControl
             label="Default Block Styles"
             checked={context.preferences.general.defaultBlockStyles}
