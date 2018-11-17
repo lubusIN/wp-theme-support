@@ -2,6 +2,7 @@
  * External dependencies
  */
 import React from "react";
+import { isEmpty } from "lodash";
 
 /**
  * WordPress dependencies
@@ -15,39 +16,26 @@ export const PreferencesContext = React.createContext();
 export class PreferencesProvider extends Component {
   constructor(props) {
     super(props);
+    this.getDefault = this.getDefault.bind(this);
     this.updatePreferences = this.updatePreferences.bind(this);
-    this.state = {
+
+    this.state = null;
+  }
+
+  // get default preferences
+  getDefault() {
+    const defaultPreferences = {
       general: {
-        wideAlignment: "wide",
+        wideAlignment: "normal",
         defaultBlockStyles: false,
         responsiveEmbed: false
       },
       colors: {
-        shades: [
-          {
-            name: "Red",
-            code: "#0071a1"
-          },
-          {
-            name: "Black",
-            code: "#000000"
-          }
-        ],
+        shades: [],
         custom: false
       },
       fontsizes: {
-        sizes: [
-          {
-            name: "Big",
-            short: "B",
-            size: "40"
-          },
-          {
-            name: "Huge",
-            short: "H",
-            size: "60"
-          }
-        ],
+        sizes: [],
         custom: true
       },
       styles: {
@@ -60,22 +48,52 @@ export class PreferencesProvider extends Component {
         full: "none"
       }
     };
+
+    return defaultPreferences;
   }
 
+  // Fetch settings
+  componentDidMount() {
+    let wpSettings;
+
+    // load api
+    wp.api.loadPromise.then(() => {
+      wpSettings = new wp.api.models.Settings();
+
+      // get settings
+      wpSettings.fetch().then(settings => {
+        if (!isEmpty(settings.lubusin_theme_preferences)) {
+          this.setState(JSON.parse(settings.lubusin_theme_preferences));
+        } else {
+          this.setState(this.getDefault());
+        }
+      });
+    });
+  }
+
+  // Update preferences
   updatePreferences(data) {
     this.setState(data);
+
+    const wpSettings = new wp.api.models.Settings({
+      lubusin_theme_preferences: JSON.stringify(this.state)
+    });
+
+    wpSettings.save();
   }
 
   render() {
     return (
-      <PreferencesContext.Provider
-        value={{
-          preferences: this.state,
-          updatePreferences: this.updatePreferences
-        }}
-      >
-        {this.props.children}
-      </PreferencesContext.Provider>
+      !isEmpty(this.state) && (
+        <PreferencesContext.Provider
+          value={{
+            preferences: this.state,
+            updatePreferences: this.updatePreferences
+          }}
+        >
+          {this.props.children}
+        </PreferencesContext.Provider>
+      )
     );
   }
 }

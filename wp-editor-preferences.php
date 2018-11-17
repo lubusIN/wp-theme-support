@@ -7,13 +7,13 @@
  * Author: LUBUS
  * Author URI: https://lubus.in
  * Version: 1.1.0
- * Text Domain: dummynator
+ * Text Domain: wep
  * Domain Path: /languages
  * GitHub Plugin URI: https://github.com/lubusIN/wp-editor-preferences
  * Tags: gutenberg, editor, settings, preferences
  * Requires at least: 3.0.1
  * Tested up to:  4.9.4
- * Stable tag: 1.1.0
+ * Stable tag: 1.0.0
  * License: GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
@@ -78,7 +78,9 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 		private function init_hooks() {
 			// Set up localization on init Hook.
 			add_action( 'init', array( $this, 'load_textdomain' ), 0 );
+			add_action( 'init', array( $this, 'register_settings' ) );
 			add_action( 'enqueue_block_editor_assets', array( $this, 'register_editor_plugin' ) );
+			add_action( 'after_setup_theme', array( $this, 'load_theme_support') );
 		}
 
 		/**
@@ -180,8 +182,8 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 					'wp-i18n',
 					'wp-data',
 					'wp-components',
-					'wp-blocks',
 					'wp-editor',
+					'wp-api'
 				),
 				filemtime( WEP_PLUGIN_DIR . $plugin_js ),
 				true
@@ -197,6 +199,26 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 
 			wp_enqueue_style( 'wp-editor-preferences-style' );
 			wp_enqueue_script( 'wp-editor-preferences-js' );
+		}
+
+		/**
+		 * Register Settings
+		 * 
+		 * @since   1.0.0
+		 * @access  public
+		 */
+		public function register_settings() {
+			register_setting(
+				'lubusin_theme_preferences',
+				'lubusin_theme_preferences',
+				array(
+					'type'              => 'string',
+					'description'       => __( 'Editor theme preferences.', 'wep' ),
+					'sanitize_callback' => 'sanitize_text_field',
+					'show_in_rest'      => true,
+					'default'           => ''
+				)
+			);
 		}
 	}
 
