@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { isEmpty } from "lodash";
+import slugify from "@sindresorhus/slugify";
 
 /**
  * WordPress dependencies
@@ -79,7 +80,7 @@ const add = ({ onAdd, code, name, setState }) => {
             disabled={isEmpty(name) || isEmpty(code)}
             isPrimary={true}
             onClick={() => {
-              onAdd({ code, name });
+              onAdd({ name: name, slug: slugify(name), color: code });
               onClose();
             }}
           />
@@ -89,4 +90,4 @@ const add = ({ onAdd, code, name, setState }) => {
   );
 };
 
-export default withState({ code: "#000", name: "Black" })(add);
+export default withState({ code: "#333333", name: "" })(add);

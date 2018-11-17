@@ -51,7 +51,7 @@ const Colors = () => {
           {context.preferences.colors.shades.map((shade, index) => (
             <Color
               key={index}
-              code={shade.code}
+              code={shade.color}
               name={shade.name}
               onDelete={() => onDelete(context, index)}
               onUpdate={(key, value) => onUpdate(context, index, key, value)}
