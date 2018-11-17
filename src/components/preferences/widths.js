@@ -18,7 +18,7 @@ const Widths = () => {
   return (
     <PreferencesContext.Consumer>
       {context => (
-        <PanelBody title="Width" initialOpen={false}>
+        <PanelBody title="Editor Width" initialOpen={false}>
           <PanelRow className="wp-editor-preferences-sidebar__fontsize">
             <TextControl
               label="Main"

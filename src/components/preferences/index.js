@@ -5,7 +5,6 @@ import { PreferencesProvider } from "../context";
 import General from "./general";
 import Colors from "./colors";
 import FontSizes from "./fontsizes";
-import Styles from "./styles";
 import Widths from "./widths";
 
 // Preference Component
@@ -16,7 +15,6 @@ const Preferences = () => {
         <General />
         <Colors />
         <FontSizes />
-        <Styles />
         <Widths />
       </div>
     </PreferencesProvider>

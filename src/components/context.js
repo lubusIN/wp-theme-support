@@ -38,10 +38,6 @@ export class PreferencesProvider extends Component {
         sizes: [],
         custom: true
       },
-      styles: {
-        editorStyles: false,
-        darkEditorStyles: false
-      },
       widths: {
         main: "720px",
         wide: "1080px",
