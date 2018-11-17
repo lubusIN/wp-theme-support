@@ -33,7 +33,7 @@ const Color = ({ code, name, onDelete, onUpdate }) => {
         renderContent={() => (
           <ColorPicker
             color={code}
-            onChangeComplete={value => onChange("code", value.hex)}
+            onChangeComplete={value => onChange("color", value.hex)}
             disableAlpha
           />
         )}
