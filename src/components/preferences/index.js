@@ -2,7 +2,7 @@
  * Internal dependencies
  */
 import { PreferencesProvider } from "../context";
-import General from "./general";
+import Misc from "./misc";
 import Colors from "./colors";
 import FontSizes from "./fontsizes";
 import Widths from "./widths";
@@ -12,10 +12,10 @@ const Preferences = () => {
   return (
     <PreferencesProvider>
       <div className="wp-editor-preferences-sidebar">
-        <General />
         <Colors />
         <FontSizes />
         <Widths />
+        <Misc />
       </div>
     </PreferencesProvider>
   );

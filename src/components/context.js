@@ -25,10 +25,6 @@ export class PreferencesProvider extends Component {
   // get default preferences
   getDefault() {
     const defaultPreferences = {
-      general: {
-        defaultBlockStyles: false,
-        responsiveEmbed: false
-      },
       colors: {
         shades: [],
         custom: false
@@ -41,6 +37,10 @@ export class PreferencesProvider extends Component {
         main: "720px",
         wide: "1080px",
         full: "none"
+      },
+      Misc: {
+        defaultBlockStyles: false,
+        responsiveEmbed: false
       }
     };
 
