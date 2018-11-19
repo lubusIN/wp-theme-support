@@ -41,50 +41,38 @@ const add = ({ onAdd, code, name, setState }) => {
         </Button>
       )}
       renderContent={({ onClose }) => (
-        <PanelRow className="wp-editor-preferences-sidebar__color">
-          <Dropdown
-            className="wp-editor-preferences-sidebar__color-picker-container"
-            contentClassName="wp-editor-preferences-sidebar__color-picker-content"
-            position="bottom left"
-            renderToggle={({ isOpen, onToggle }) => (
-              <ColorIndicator
-                isPrimary
-                onClick={onToggle}
-                aria-expanded={isOpen}
-                colorValue={code}
-              />
-            )}
-            renderContent={() => (
-              <ColorPicker
-                color={code}
-                onChangeComplete={code =>
-                  setState(() => ({
-                    code: code.hex
-                  }))
-                }
-                disableAlpha
-              />
-            )}
+        <div>
+          <ColorPicker
+            color={code}
+            onChangeComplete={code =>
+              setState(() => ({
+                code: code.hex
+              }))
+            }
+            disableAlpha
           />
 
-          <TextControl
-            label="Name"
-            value={name}
-            className="wp-editor-preferences-sidebar__color-name"
-            onChange={name => setState(() => ({ name }))}
-          />
-          <IconButton
-            className="wp-editor-preferences-sidebar__color-save"
-            label="Save"
-            icon="yes"
-            disabled={isEmpty(name) || isEmpty(code)}
-            isPrimary={true}
-            onClick={() => {
-              onAdd({ name: name, slug: slugify(name), color: code });
-              onClose();
-            }}
-          />
-        </PanelRow>
+          <PanelRow className="wp-editor-preferences-sidebar__color">
+            <ColorIndicator colorValue={code} />
+            <TextControl
+              label="Name"
+              value={name}
+              className="wp-editor-preferences-sidebar__color-name"
+              onChange={name => setState(() => ({ name }))}
+            />
+            <IconButton
+              className="wp-editor-preferences-sidebar__color-save"
+              label="Save"
+              icon="yes"
+              disabled={isEmpty(name) || isEmpty(code)}
+              isPrimary={true}
+              onClick={() => {
+                onAdd({ name: name, slug: slugify(name), color: code });
+                onClose();
+              }}
+            />
+          </PanelRow>
+        </div>
       )}
     />
   );
