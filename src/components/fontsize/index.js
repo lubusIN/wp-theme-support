@@ -15,25 +15,25 @@ const FontSize = ({ name, shortName, value, onDelete, onUpdate }) => {
       <TextControl
         label="Name"
         value={name}
-        className="wp-editor-preferences-sidebar__fontsize-name"
+        className="wp-theme-support-sidebar__fontsize-name"
         onChange={value => onChange("name", value)}
       />
-      <PanelRow className="wp-editor-preferences-sidebar__fontsize">
+      <PanelRow className="wp-theme-support-sidebar__fontsize">
         <TextControl
           label="Short name"
           value={shortName}
-          className="wp-editor-preferences-sidebar__fontsize-short-name"
+          className="wp-theme-support-sidebar__fontsize-short-name"
           onChange={value => onChange("short", value)}
         />
         <TextControl
           type="number"
           label="size"
           value={value}
-          className="wp-editor-preferences-sidebar__fontsize-size"
+          className="wp-theme-support-sidebar__fontsize-size"
           onChange={value => onChange("size", value)}
         />
         <IconButton
-          className="wp-editor-preferences-sidebar__fontsize-remove"
+          className="wp-theme-support-sidebar__fontsize-remove"
           label="Remove"
           icon="no-alt"
           isLink

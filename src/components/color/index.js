@@ -17,10 +17,10 @@ const Color = ({ code, name, onDelete, onUpdate }) => {
   };
 
   return (
-    <PanelRow className="wp-editor-preferences-sidebar__color">
+    <PanelRow className="wp-theme-support-sidebar__color">
       <Dropdown
-        className="wp-editor-preferences-sidebar__color-picker-container"
-        contentClassName="wp-editor-preferences-sidebar__color-picker-content"
+        className="wp-theme-support-sidebar__color-picker-container"
+        contentClassName="wp-theme-support-sidebar__color-picker-content"
         position="bottom left"
         renderToggle={({ isOpen, onToggle }) => (
           <ColorIndicator
@@ -41,11 +41,11 @@ const Color = ({ code, name, onDelete, onUpdate }) => {
       <TextControl
         label="Name"
         value={name}
-        className="wp-editor-preferences-sidebar__color-name"
+        className="wp-theme-support-sidebar__color-name"
         onChange={value => onChange("name", value)}
       />
       <IconButton
-        className="wp-editor-preferences-sidebar__color-remove button-link-delete"
+        className="wp-theme-support-sidebar__color-remove button-link-delete"
         label="Remove"
         icon="no-alt"
         isLink

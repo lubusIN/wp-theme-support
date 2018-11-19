@@ -22,55 +22,55 @@ import {
 import "./style.scss";
 
 // Component
-const add = ({ onAdd, name, short, size, setState }) => {
+const add = ({ onAdd, name, shortName, size, setState }) => {
   return (
     <Dropdown
-      className="wp-editor-preferences-sidebar__fontsize-add-container"
-      contentClassName="wp-editor-preferences-sidebar__fontsize-add-content"
+      className="wp-theme-support-sidebar__fontsize-add-container"
+      contentClassName="wp-theme-support-sidebar__fontsize-add-content"
       position="bottom left"
       renderToggle={({ isOpen, onToggle }) => (
         <Button
           isDefault
           onClick={onToggle}
           aria-expanded={isOpen}
-          className="wp-editor-preferences-sidebar__fontsize-add"
+          className="wp-theme-support-sidebar__fontsize-add"
         >
           Add
         </Button>
       )}
       renderContent={({ onClose }) => (
-        <div className="wp-editor-preferences-sidebar__fontsize-wrapper">
+        <div className="wp-theme-support-sidebar__fontsize-wrapper">
           <TextControl
             label="Name"
             value={name}
-            className="wp-editor-preferences-sidebar__fontsize-name"
+            className="wp-theme-support-sidebar__fontsize-name"
             onChange={name => setState(() => ({ name }))}
           />
-          <PanelRow className="wp-editor-preferences-sidebar__fontsize">
+          <PanelRow className="wp-theme-support-sidebar__fontsize">
             <TextControl
               label="Short name"
-              value={short}
-              className="wp-editor-preferences-sidebar__fontsize-short-name"
-              onChange={short => setState(() => ({ short }))}
+              value={shortName}
+              className="wp-theme-support-sidebar__fontsize-short-name"
+              onChange={shortName => setState(() => ({ shortName }))}
             />
             <TextControl
               type="number"
               label="size"
               value={size}
-              className="wp-editor-preferences-sidebar__fontsize-size"
+              className="wp-theme-support-sidebar__fontsize-size"
               onChange={size => setState(() => ({ size }))}
             />
             <IconButton
-              className="wp-editor-preferences-sidebar__fontsize-save"
-              disabled={isEmpty(name) || isEmpty(short) || isEmpty(size)}
+              className="wp-theme-support-sidebar__fontsize-save"
+              disabled={isEmpty(name) || isEmpty(shortName) || isEmpty(size)}
               label="Save"
               icon="yes"
               isPrimary={true}
               onClick={() => {
                 onAdd({
-                  name: name,
-                  shortName: short,
-                  size: size,
+                  name,
+                  shortName,
+                  size,
                   slug: slugify(name)
                 });
                 onClose();
@@ -83,4 +83,4 @@ const add = ({ onAdd, name, short, size, setState }) => {
   );
 };
 
-export default withState({ name: "", short: "", size: "" })(add);
+export default withState({ name: "", shortName: "", size: "" })(add);

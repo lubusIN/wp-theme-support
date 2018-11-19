@@ -18,6 +18,6 @@ const WpEditorPreferencesPlugin = () => (
   </Fragment>
 );
 
-registerPlugin("wp-editor-preferences", {
+registerPlugin("wp-theme-support", {
   render: WpEditorPreferencesPlugin
 });

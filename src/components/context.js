@@ -31,14 +31,14 @@ export class PreferencesProvider extends Component {
       },
       fontsizes: {
         sizes: [],
-        custom: true
+        custom: false
       },
       widths: {
         main: "720px",
         wide: "1080px",
         full: "none"
       },
-      Misc: {
+      misc: {
         defaultBlockStyles: false,
         responsiveEmbed: false
       }
@@ -57,8 +57,8 @@ export class PreferencesProvider extends Component {
 
       // get settings
       wpSettings.fetch().then(settings => {
-        if (!isEmpty(settings.lubusin_theme_preferences)) {
-          this.setState(JSON.parse(settings.lubusin_theme_preferences));
+        if (!isEmpty(settings.lubusin_theme_support)) {
+          this.setState(JSON.parse(settings.lubusin_theme_support));
         } else {
           this.setState(this.getDefault());
         }
@@ -71,7 +71,7 @@ export class PreferencesProvider extends Component {
     this.setState(data);
 
     const wpSettings = new wp.api.models.Settings({
-      lubusin_theme_preferences: JSON.stringify(this.state)
+      lubusin_theme_support: JSON.stringify(this.state)
     });
 
     wpSettings.save();

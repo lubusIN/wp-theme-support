@@ -10,8 +10,8 @@ import { PluginSidebarMoreMenuItem } from "@wordpress/editPost";
 import { Icon } from "../components/icon";
 
 const PreferencesMenuItem = () => (
-  <PluginSidebarMoreMenuItem icon={Icon} target="wp-editor-preferences-sidebar">
-    {__("Preferences")}
+  <PluginSidebarMoreMenuItem icon={Icon} target="wp-theme-support-sidebar">
+    {__("Theme Support")}
   </PluginSidebarMoreMenuItem>
 );
 

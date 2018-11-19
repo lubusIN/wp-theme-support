@@ -1,5 +1,5 @@
 {
-  "name": "wp-editor-preferences",
+  "name": "wp-theme-support",
   "version": "1.0.0",
   "private": true,
   "engines": {
@@ -29,7 +29,7 @@
           [
             "@wordpress/babel-plugin-makepot",
             {
-              "output": "languages/wp-editor-preferences.pot"
+              "output": "languages/wp-theme-support.pot"
             }
           ]
         ]

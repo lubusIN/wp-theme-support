@@ -11,7 +11,7 @@ import Preferences from "../components/preferences";
 const PreferencesSidebar = () => {
   return (
     <PluginSidebar
-      name="wp-editor-preferences-sidebar"
+      name="wp-theme-support-sidebar"
       isPinnable={false}
       title="Editor Preferences"
     >

@@ -22,19 +22,19 @@ const Widths = () => {
           <TextControl
             label="Main Column"
             value={context.preferences.widths.main}
-            className="wp-editor-preferences-sidebar__width-main"
+            className="wp-theme-support-sidebar__width-main"
             onChange={value => update(context, "main", value)}
           />
           <TextControl
             label="Wide Blocks"
             value={context.preferences.widths.wide}
-            className="wp-editor-preferences-sidebar__width-wide"
+            className="wp-theme-support-sidebar__width-wide"
             onChange={value => update(context, "wide", value)}
           />
           <TextControl
             label="Full Wide Blocks"
             value={context.preferences.widths.full}
-            className="wp-editor-preferences-sidebar__width-full"
+            className="wp-theme-support-sidebar__width-full"
             onChange={value => update(context, "full", value)}
           />
         </PanelBody>

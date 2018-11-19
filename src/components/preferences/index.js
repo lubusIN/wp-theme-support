@@ -11,7 +11,7 @@ import Widths from "./widths";
 const Preferences = () => {
   return (
     <PreferencesProvider>
-      <div className="wp-editor-preferences-sidebar">
+      <div className="wp-theme-support-sidebar">
         <Colors />
         <FontSizes />
         <Widths />

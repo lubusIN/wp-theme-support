@@ -1,8 +1,8 @@
-<p align="center"><img src="https://raw.githubusercontent.com/lubusIN/wp-editor-preferences/master/.wordpress-org/logo.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lubusIN/wp-theme-support/master/.wordpress-org/logo.png"></p>
 
 <p align="center">
-<a href="https://wordpress.org/plugins/wp-editor-preferences/"><img src="https://img.shields.io/wordpress/plugin/v/wp-editor-preferences.svg" alt="Latest Stable Version"></a> <a href="https://wordpress.org/plugins/wp-editor-preferences/"><img src="https://img.shields.io/wordpress/v/wp-editor-preferences.svg" alt="Version Tested"></a> <a href="https://wordpress.org/plugins/wp-editor-preferences/"><img src="https://img.shields.io/wordpress/plugin/dt/wp-editor-preferences.svg" alt="Downloads"></a> <a href="https://wordpress.org/plugins/wp-editor-preferences/"><img src="https://img.shields.io/wordpress/plugin/r/wp-editor-preferences.svg" alt="Rating"></a> <a href="https://wordpress.org/plugins/wp-editor-preferences/"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="Licence"></a>
-<a href="https://github.com/lubusin/wp-editor-preferences/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs"></a>
+<a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/wordpress/plugin/v/wp-theme-support.svg" alt="Latest Stable Version"></a> <a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/wordpress/v/wp-theme-support.svg" alt="Version Tested"></a> <a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/wordpress/plugin/dt/wp-theme-support.svg" alt="Downloads"></a> <a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/wordpress/plugin/r/wp-theme-support.svg" alt="Rating"></a> <a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="Licence"></a>
+<a href="https://github.com/lubusin/wp-theme-support/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs"></a>
 </p>
 
 <center>
@@ -13,48 +13,40 @@
 
 ## Introduction
 
-Quickly config theme support for editor without any code
+Quickly config theme support using UI
 
-<center>
-<img width="400" src=".wordpress-org/illustration.svg" alt="WP Editor Preferences" />	
-</center>
-
-## Demo
-![Plugin Demo](https://raw.githubusercontent.com/lubusIN/wp-editor-preferences/master/.wordpress-org/screenshot-1.gif)
-
-
-
+![Plugin Demo](https://raw.githubusercontent.com/lubusIN/wp-theme-support/master/.wordpress-org/screenshot-1.gif)
 
 ## Feedback / Suggestions
 
-If you have any suggestions/feature request that you would like to see in the upcoming releases , feel free to let us know in the [issues section](https://github.com/lubusIN/wp-editor-preferences/issues)
+If you have any suggestions/feature request that you would like to see in the upcoming releases , feel free to let us know in the [issues section](https://github.com/lubusIN/wp-theme-support/issues)
 
 
 ## Installation
 
 ***From your WordPress dashboard***
  1. Visit 'Plugins > Add New'
- 2. Search for `WP Editor Preferences`  or upload zip file
- 3. Activate `WP Editor Preferences` from your Plugins page
+ 2. Search for `WP Theme Support`  or upload zip file
+ 3. Activate `WP Theme Support` from your Plugins page
 
 ## Manual Installation
- 1. [Download](https://wordpress.org/plugins/wp-editor-preferences/) "WP Editor Preferences".
- 2. Upload the `wp-editor-preferences` directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
- 3. Activate `WP Editor Preferences` from your Plugins page.
+ 1. [Download](https://wordpress.org/plugins/wp-theme-support/) "WP Theme Support".
+ 2. Upload the `wp-theme-support` directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
+ 3. Activate `WP Theme Support` from your Plugins page.
 
 ## Usage
 
 - Simply activate and new menu will be registered<br/>
-- Config editor preferences
+- Config Theme Support
 
 ## Changelog
 
 Please see the [Changelog](CHANGELOG.md) 
 ## Contributing
 
-Thank you for considering contributing to the `WP Editor Preferences`. You can read the contribution guide lines [here](CONTRIBUTING.md)
+Thank you for considering contributing to the `WP Theme Support`. You can read the contribution guide lines [here](CONTRIBUTING.md)
 
-Check the development tasklist [here](https://github.com/lubusIN/wp-editor-preferences/projects/1) if something interest you or suggest something [here](https://github.com/lubusIN/wp-editor-preferences/issues)
+Check the development tasklist [here](https://github.com/lubusIN/wp-theme-support/projects/1) if something interest you or suggest something [here](https://github.com/lubusIN/wp-theme-support/issues)
 
 ## Security
 
@@ -93,4 +85,4 @@ You can pledge on [patreon](https://www.patreon.com/lubus) to support the develo
 
 ## License
 
-`WP Editor Preferences` is open-sourced software licensed under the [GPL 3.0 license](LICENSE)
+`WP Theme Support` is open-sourced software licensed under the [GPL 3.0 license](LICENSE)

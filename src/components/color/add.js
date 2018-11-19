@@ -27,15 +27,15 @@ import "./style.scss";
 const add = ({ onAdd, code, name, setState }) => {
   return (
     <Dropdown
-      className="wp-editor-preferences-sidebar__color-add-container"
-      contentClassName="wp-editor-preferences-sidebar__color-add-content"
+      className="wp-theme-support-sidebar__color-add-container"
+      contentClassName="wp-theme-support-sidebar__color-add-content"
       position="bottom left"
       renderToggle={({ isOpen, onToggle }) => (
         <Button
           isDefault
           onClick={onToggle}
           aria-expanded={isOpen}
-          className="wp-editor-preferences-sidebar__color-add"
+          className="wp-theme-support-sidebar__color-add"
         >
           Add
         </Button>
@@ -52,16 +52,16 @@ const add = ({ onAdd, code, name, setState }) => {
             disableAlpha
           />
 
-          <PanelRow className="wp-editor-preferences-sidebar__color">
+          <PanelRow className="wp-theme-support-sidebar__color">
             <ColorIndicator colorValue={code} />
             <TextControl
               label="Name"
               value={name}
-              className="wp-editor-preferences-sidebar__color-name"
+              className="wp-theme-support-sidebar__color-name"
               onChange={name => setState(() => ({ name }))}
             />
             <IconButton
-              className="wp-editor-preferences-sidebar__color-save"
+              className="wp-theme-support-sidebar__color-save"
               label="Save"
               icon="yes"
               disabled={isEmpty(name) || isEmpty(code)}

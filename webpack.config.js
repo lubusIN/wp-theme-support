@@ -69,7 +69,7 @@ const config = {
   output: {
     filename: "build/script.js",
     path: __dirname,
-    library: ["wp-editor-preferences", "[name]"],
+    library: ["wp-theme-support", "[name]"],
     libraryTarget: "this"
   },
   resolve: {

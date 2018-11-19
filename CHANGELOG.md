@@ -1,9 +1,9 @@
 **Change Log**
 --------------
 
-All notable changes to "WP Editor Preferences" will be documented here
+All notable changes to "WP Theme Support" will be documented here
 
-***v1.0.0***
+***v0.1.0***
 
 Released on [Unreleased]
 

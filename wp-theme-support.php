@@ -1,23 +1,23 @@
 <?php
 /**
  * Contributors: lubus, ajitbohra
- * Plugin Name: Editor Preferences
+ * Plugin Name: Theme Support
  * Plugin URI: https://www.lubus.in
- * Description: Quickly config theme support for editor without any code
+ * Description: Quickly config theme support using UI
  * Author: LUBUS
  * Author URI: https://lubus.in
- * Version: 1.1.0
- * Text Domain: wep
+ * Version: 0.1.0
+ * Text Domain: lts
  * Domain Path: /languages
- * GitHub Plugin URI: https://github.com/lubusIN/wp-editor-preferences
- * Tags: gutenberg, editor, settings, preferences
+ * GitHub Plugin URI: https://github.com/lubusIN/wp-theme-support
+ * Tags: gutenberg, editor, theme, support
  * Requires at least: 3.0.1
  * Tested up to:  4.9.4
- * Stable tag: 1.0.0
+ * Stable tag: 0.1.0
  * License: GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
- * @package LubusIN_Editor_Preferences
+ * @package LubusIN_Theme_Support
  */
 
 // If this file is called directly, abort.
@@ -25,21 +25,21 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
+if ( ! class_exists( 'LubusIN_Theme_Support' ) ) :
 	/**
-	 * LubusIN_Editor_Preferences Class.
+	 * LubusIN_Theme_Support Class.
 	 *
 	 * Main Class.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
-	class LubusIN_Editor_Preferences {
+	class LubusIN_Theme_Support {
 		/**
 		 * Instance.
 		 *
 		 * @since
 		 * @access private
-		 * @var LubusIN_Editor_Preferences
+		 * @var LubusIN_Theme_Support
 		 */
 		static private $instance;
 
@@ -60,7 +60,7 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 		 *
 		 * @since
 		 * @access public
-		 * @return LubusIN_Editor_Preferences
+		 * @return LubusIN_Theme_Support
 		 */
 		public static function get_instance() {
 			if ( null === static::$instance ) {
@@ -73,7 +73,7 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 		/**
 		 * Hook into actions and filters.
 		 *
-		 * @since  1.0.0
+		 * @since  0.1.0
 		 */
 		private function init_hooks() {
 			// Set up localization on init Hook.
@@ -90,80 +90,80 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 		 * The whole idea of the singleton design pattern is that there is a single
 		 * object, therefore we don't want the object to be cloned.
 		 *
-		 * @since  1.0
+		 * @since  0.1.0
 		 * @access protected
 		 *
 		 * @return void
 		 */
 		public function __clone() {
 			// Cloning instances of the class is forbidden.
-			wep_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wep' ), '1.0' );
+			lts_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'lts' ), '1.0' );
 		}
 
 		/**
 		 * Disable unserializing of the class
 		 *
-		 * @since  1.0
+		 * @since  0.1.0
 		 * @access protected
 		 *
 		 * @return void
 		 */
 		public function __wakeup() {
 			// Unserializing instances of the class is forbidden.
-			wep_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wep' ), '1.0' );
+			lts_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'lts' ), '1.0' );
 		}
 
 		/**
 		 * Setup plugin constants
 		 *
-		 * @since  1.0
+		 * @since  0.1.0
 		 * @access private
 		 *
 		 * @return void
 		 */
 		private function setup_constants() {
 			// Plugin version
-			if ( ! defined( 'WEP_VERSION' ) ) {
-				define( 'WEP_VERSION', '1.0.0' );
+			if ( ! defined( 'LTS_VERSION' ) ) {
+				define( 'LTS_VERSION', '0.1.0' );
 			}
 			// Plugin Root File
-			if ( ! defined( 'WEP_PLUGIN_FILE' ) ) {
-				define( 'WEP_PLUGIN_FILE', __FILE__ );
+			if ( ! defined( 'LTS_PLUGIN_FILE' ) ) {
+				define( 'LTS_PLUGIN_FILE', __FILE__ );
 			}
 			// Plugin Folder Path
-			if ( ! defined( 'WEP_PLUGIN_DIR' ) ) {
-				define( 'WEP_PLUGIN_DIR', plugin_dir_path( WEP_PLUGIN_FILE ) );
+			if ( ! defined( 'LTS_PLUGIN_DIR' ) ) {
+				define( 'LTS_PLUGIN_DIR', plugin_dir_path( LTS_PLUGIN_FILE ) );
 			}
 			// Plugin Folder URL
-			if ( ! defined( 'WEP_PLUGIN_URL' ) ) {
-				define( 'WEP_PLUGIN_URL', plugin_dir_url( WEP_PLUGIN_FILE ) );
+			if ( ! defined( 'LTS_PLUGIN_URL' ) ) {
+				define( 'LTS_PLUGIN_URL', plugin_dir_url( LTS_PLUGIN_FILE ) );
 			}
-			// Plugin Basename aka: "wp-editor-preferences/wp-editor-preferences.php"
-			if ( ! defined( 'WEP_PLUGIN_BASENAME' ) ) {
-				define( 'WEP_PLUGIN_BASENAME', plugin_basename( WEP_PLUGIN_FILE ) );
+			// Plugin Basename aka: "wp-theme-support/wp-theme-support.php"
+			if ( ! defined( 'LTS_PLUGIN_BASENAME' ) ) {
+				define( 'LTS_PLUGIN_BASENAME', plugin_basename( LTS_PLUGIN_FILE ) );
 			}
 		}
 
 		/**
 		 * Loads the plugin language files.
 		 *
-		 * @since  1.0.0
+		 * @since  0.1.0
 		 * @access public
 		 *
 		 * @return void
 		 */
 		public function load_textdomain() {
-			$locale = apply_filters( 'plugin_locale', get_locale(), 'wep' );
+			$locale = apply_filters( 'plugin_locale', get_locale(), 'lts' );
 			// wp-content/languages/plugin-name/plugin-name-en_EN.mo.
-			load_textdomain( 'wep', trailingslashit( WP_LANG_DIR ) . 'wp-editor-preferences' . '/' . 'wp-editor-preferences' . '-' . $locale . '.mo' );
+			load_textdomain( 'lts', trailingslashit( WP_LANG_DIR ) . 'wp-theme-support' . '/' . 'wp-theme-support' . '-' . $locale . '.mo' );
 			// wp-content/plugins/plugin-name/languages/plugin-name-en_EN.mo.
-			load_plugin_textdomain( 'wep', false, basename( WEP_PLUGIN_DIR ) . '/languages/' );
+			load_plugin_textdomain( 'lts', false, basename( LTS_PLUGIN_DIR ) . '/languages/' );
 		}
 
 		/**
 		 * Registers scripts
 		 *
-		 * @since 1.0.0
+		 * @since 0.1.0
 		 * @access public
 		 *
 		 * @return void
@@ -174,8 +174,8 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 
 			// Script
 			wp_register_script(
-				'wp-editor-preferences-js',
-				WEP_PLUGIN_URL . $plugin_js,
+				'wp-theme-support-js',
+				LTS_PLUGIN_URL . $plugin_js,
 				array(
 					'wp-plugins',
 					'wp-element',
@@ -186,35 +186,35 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 					'wp-editor',
 					'wp-api'
 				),
-				filemtime( WEP_PLUGIN_DIR . $plugin_js ),
+				filemtime( LTS_PLUGIN_DIR . $plugin_js ),
 				true
 			);
 
 			// Style
 			wp_register_style(
-				'wp-editor-preferences-style',
-				WEP_PLUGIN_URL . $plugin_css,
+				'wp-theme-support-style',
+				LTS_PLUGIN_URL . $plugin_css,
 				array(),
-				filemtime( WEP_PLUGIN_DIR . $plugin_css )
+				filemtime( LTS_PLUGIN_DIR . $plugin_css )
 			);
 
-			wp_enqueue_style( 'wp-editor-preferences-style' );
-			wp_enqueue_script( 'wp-editor-preferences-js' );
+			wp_enqueue_style( 'wp-theme-support-style' );
+			wp_enqueue_script( 'wp-theme-support-js' );
 		}
 
 		/**
 		 * Register Settings
 		 * 
-		 * @since   1.0.0
+		 * @since   0.1.0
 		 * @access  public
 		 */
 		public function register_settings() {
 			register_setting(
-				'lubusin_theme_preferences',
-				'lubusin_theme_preferences',
+				'lubusin_theme_support',
+				'lubusin_theme_support',
 				array(
 					'type'              => 'string',
-					'description'       => __( 'Editor theme preferences.', 'wep' ),
+					'description'       => __( 'Theme Support.', 'lts' ),
 					'sanitize_callback' => 'sanitize_text_field',
 					'show_in_rest'      => true,
 					'default'           => ''
@@ -225,12 +225,12 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 		/**
 		 * Load theme support
 		 * 
-		 * @since   1.0.0
+		 * @since   0.1.0
 		 * @access  public
 		 */
 		public function load_theme_support() {
 			// Get settings
-			$theme_support = json_decode(get_option( 'lubusin_theme_preferences' ));
+			$theme_support = json_decode(get_option( 'lubusin_theme_support' ));
 			
 			$colors = (array)$theme_support->colors->shades;
 			$color_custom = $theme_support->colors->custom;
@@ -284,7 +284,7 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 		/**
 		 * Load editor styles
 		 * 
-		 * @since   1.0.0
+		 * @since   0.1.0
 		 * @access  public
 		 */
 		public function load_editor_styles() {
@@ -322,5 +322,4 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 
 endif;
 
-LubusIN_Editor_Preferences::get_instance();
-
+LubusIN_Theme_Support::get_instance();
