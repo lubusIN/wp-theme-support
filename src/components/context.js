@@ -26,7 +26,6 @@ export class PreferencesProvider extends Component {
   getDefault() {
     const defaultPreferences = {
       general: {
-        wideAlignment: false,
         defaultBlockStyles: false,
         responsiveEmbed: false
       },

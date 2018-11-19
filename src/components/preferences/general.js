@@ -20,12 +20,6 @@ const General = () => {
       {context => (
         <PanelBody title="General" initialOpen={false}>
           <ToggleControl
-            label="Wide Alignment"
-            checked={context.preferences.general.wideAlignment}
-            onChange={value => update(context, "wideAlignment", value)}
-          />
-
-          <ToggleControl
             label="Default Block Styles"
             checked={context.preferences.general.defaultBlockStyles}
             onChange={value => update(context, "defaultBlockStyles", value)}
