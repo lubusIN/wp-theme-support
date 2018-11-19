@@ -18,7 +18,7 @@
 
         &__color-remove,
         &__fontsize-remove{
-                margin-top: 16px;
+                margin-top: 22px !important;
         }
 
         &__color-name{
@@ -27,9 +27,5 @@
 
         &__fontsize{
                 margin-top: 5px;
-        }
-
-        &__fontsize-short-name{
-                width: 130px;
         }
 }

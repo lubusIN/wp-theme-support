@@ -3,6 +3,16 @@
         margin-top: 20px;
     }
 
+    &__fontsize-short-name{
+        width: 140px;
+        margin-right: 10px; 
+    }
+
+    &__fontsize-size{
+        width: 80px;
+        margin-right: 10px; 
+    }
+
     &__fontsize-add-content {
         .wp-editor-preferences-sidebar__fontsize-wrapper{
             padding: 6px;

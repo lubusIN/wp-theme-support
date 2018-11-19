@@ -80,7 +80,8 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 			add_action( 'init', array( $this, 'load_textdomain' ), 0 );
 			add_action( 'init', array( $this, 'register_settings' ) );
 			add_action( 'enqueue_block_editor_assets', array( $this, 'register_editor_plugin' ) );
-			add_action( 'after_setup_theme', array( $this, 'load_theme_support') );
+			add_action( 'after_setup_theme', array( $this, 'load_theme_support' ) );
+			add_action( 'admin_head', array( $this, 'load_editor_styles' ) );
 		}
 
 		/**
@@ -220,6 +221,103 @@ if ( ! class_exists( 'LubusIN_Editor_Preferences' ) ) :
 				)
 			);
 		}
+
+		/**
+		 * Load theme support
+		 * 
+		 * @since   1.0.0
+		 * @access  public
+		 */
+		public function load_theme_support() {
+			// Get settings
+			$theme_support = json_decode(get_option( 'lubusin_theme_preferences' ));
+			
+			$colors = (array)$theme_support->colors->shades;
+			$color_custom = $theme_support->colors->custom;
+
+			$fontsizes = (array)$theme_support->fontsizes->sizes;
+			$fontsizes_custom = $theme_support->fontsizes->custom;
+
+			$block_styles = $theme_support->misc->defaultBlockStyles;
+			$responsive_embeds = $theme_support->misc->responsiveEmbed;
+
+			// General
+			if( "normal" !== $wide_alignment ) {
+				switch ( $wide_alignment ) {
+					case 'wide':
+							add_theme_support( 'align-wide' );
+						break;
+					
+					case 'full':
+							add_theme_support( 'align-full' );
+						break;
+				}
+			}
+
+			if( $block_styles ) {
+				add_theme_support( 'wp-block-styles' );
+			}
+
+			if( $responsive_embeds ) {
+				add_theme_support( 'responsive-embeds' );
+			}
+
+			// Colors
+			if( $colors ) {
+				add_theme_support( 'editor-color-palette', $colors );
+			}
+
+			if( $color_custom ) {
+				add_theme_support( 'disable-custom-colors' );
+			}
+
+			// Fontsizes
+			if( $fontsizes ) {
+				add_theme_support( 'editor-font-sizes', $fontsizes );
+			}
+
+			if( $fontsizes_custom ) {
+				add_theme_support( 'disable-custom-font-sizes' );
+			}
+		}
+
+		/**
+		 * Load editor styles
+		 * 
+		 * @since   1.0.0
+		 * @access  public
+		 */
+		public function load_editor_styles() {
+			// Get settings
+			$theme_support = json_decode(get_option( 'lubusin_theme_preferences' ));
+
+			$widths_main = $theme_support->widths->main;
+			$widths_wide = $theme_support->widths->wide;
+			$widths_full = $theme_support->widths->full;
+
+			echo sprintf( '<style>
+								/* Main column width */
+								.wp-block {
+									max-width: %s;
+								}
+								
+								/* Width of "wide" blocks */
+								.wp-block[data-align="wide"] {
+									max-width: %s;
+								}
+								
+								/* Width of "full-wide" blocks */
+								.wp-block[data-align="full"] {
+									max-width: %s;
+								}
+							</style>',
+							$widths_main,
+							$widths_wide,
+							$widths_full
+
+						);
+		}
+
 	}
 
 endif;

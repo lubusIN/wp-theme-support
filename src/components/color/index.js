@@ -47,7 +47,8 @@ const Color = ({ code, name, onDelete, onUpdate }) => {
       <IconButton
         className="wp-editor-preferences-sidebar__color-remove button-link-delete"
         label="Remove"
-        icon="dismiss"
+        icon="no-alt"
+        isLink
         isDestructive={true}
         onClick={onDelete}
       />

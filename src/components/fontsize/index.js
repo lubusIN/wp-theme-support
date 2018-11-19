@@ -35,7 +35,8 @@ const FontSize = ({ name, shortName, value, onDelete, onUpdate }) => {
         <IconButton
           className="wp-editor-preferences-sidebar__fontsize-remove"
           label="Remove"
-          icon="trash"
+          icon="no-alt"
+          isLink
           isDestructive={true}
           onClick={onDelete}
         />
