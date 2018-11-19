@@ -82,6 +82,7 @@ if ( ! class_exists( 'LubusIN_Theme_Support' ) ) :
 			add_action( 'enqueue_block_editor_assets', array( $this, 'register_editor_plugin' ) );
 			add_action( 'after_setup_theme', array( $this, 'load_theme_support' ) );
 			add_action( 'admin_head', array( $this, 'load_editor_styles' ) );
+			add_action( 'wp_head', array( $this, 'load_styles' ) );
 		}
 
 		/**
@@ -289,7 +290,7 @@ if ( ! class_exists( 'LubusIN_Theme_Support' ) ) :
 		 */
 		public function load_editor_styles() {
 			// Get settings
-			$theme_support = json_decode(get_option( 'lubusin_theme_preferences' ));
+			$theme_support = json_decode(get_option( 'lubusin_theme_support' ));
 
 			$widths_main = $theme_support->widths->main;
 			$widths_wide = $theme_support->widths->wide;
@@ -316,8 +317,54 @@ if ( ! class_exists( 'LubusIN_Theme_Support' ) ) :
 							$widths_full
 
 						);
+			// Load custom css
+			$this->load_styles();
 		}
 
+		/**
+		 * Load styles for colors and fontsizes
+		 * 
+		 * @since   0.1.0
+		 * @access  public
+		 */
+		public function load_styles() {
+			// Get settings
+			$theme_support = json_decode(get_option( 'lubusin_theme_support' ));
+
+			$colors = (array)$theme_support->colors->shades;
+			$fontsizes = (array)$theme_support->fontsizes->sizes;
+	
+			$color_styles = "";
+			$fontsize_styles = "";
+
+			foreach ($colors as $color) {
+				$color_styles .= sprintf( '.has-%1$s-background-color { background-color: %2$s; }
+				
+										   .has-%1$s-color { color: %2$s; }',
+											$color->slug,
+											$color->color 
+				 						);
+			}
+
+			foreach ($fontsizes as $fontsize) {
+				$fontsize_styles .= sprintf( '.has-%1$s-font-size { font-size: %2$s; }',
+												$fontsize->slug,
+												$fontsize->size
+											);
+			}
+
+			$custom_css = sprintf( '<style type="text/css">
+										/* For colors */
+										%s
+										
+										/* For fontsizes */
+										%s
+									</style>',
+									$color_styles,
+									$fontsize_styles
+								);
+			echo $custom_css;			
+		}
 	}
 
 endif;
