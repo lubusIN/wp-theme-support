@@ -43,6 +43,6 @@ If you have any suggestions/Feature request that you would like to see in the up
 
 ***v0.1.0***
 
-Released on [Unreleased]
+Released on 21 Nov 2018
 
  - Initial plugin release

@@ -60,16 +60,33 @@ If you discover any security related issues, please email to [ajit@lubus.in](mai
 <table width="100%">
 	<tr>
 		<td width="33.33%">
-		<a href="https://github.com/lubusIN/color-palette-block">
-			<img src="https://user-images.githubusercontent.com/1039236/38085557-935d7ce8-336e-11e8-920e-dc2d46610c6a.png" alt="Color Palette"/>
+			<a href="https://github.com/lubusIN/color-palette-block">
+				<img src="https://user-images.githubusercontent.com/1039236/38085557-935d7ce8-336e-11e8-920e-dc2d46610c6a.png" alt="Color Palette"/>
 			</a>
 		</td>
 		<td width="33.33%">
 			<a href="https://github.com/lubusIN/block-background">
-			<img src="https://user-images.githubusercontent.com/1039236/38365718-068c190e-38fb-11e8-8ada-a4a50cfd95d1.png" alt="Block Background"/>
+				<img src="https://user-images.githubusercontent.com/1039236/38365718-068c190e-38fb-11e8-8ada-a4a50cfd95d1.png" alt="Block Background"/>
 			</a>
 		</td>
-		<td width="33.33%"><strong><i>Coming Soon ...</i></strong></td>
+		<td width="33.33%">
+			<a href="https://github.com/lubusIN/dummynator">
+				<img src="https://raw.githubusercontent.com/lubusIN/dummynator/master/.wordpress-org/logo.png" alt="Dummynator"/>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="33.33%">
+			<strong><i>Work In Progress ...</i>
+		</td>
+		<td width="33.33%">
+			<strong><i>Coming Soon ...</i>
+		</td>
+		<td width="33.33%">
+			<strong>
+				<i>Coming Soon ...</i>
+			</strong>
+		</td>
 	</tr>
 </table>
 
