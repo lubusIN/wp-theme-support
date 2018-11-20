@@ -13,7 +13,7 @@ const PreferencesSidebar = () => {
     <PluginSidebar
       name="wp-theme-support-sidebar"
       isPinnable={false}
-      title="Editor Preferences"
+      title="Theme Support"
     >
       <Preferences />
     </PluginSidebar>
