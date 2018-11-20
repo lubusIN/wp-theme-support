@@ -68,6 +68,7 @@ const add = ({ onAdd, code, name, setState }) => {
               isPrimary={true}
               onClick={() => {
                 onAdd({ name: name, slug: slugify(name), color: code });
+                setState(() => ({ code: "#333333", name: "" }));
                 onClose();
               }}
             />

@@ -73,6 +73,7 @@ const add = ({ onAdd, name, shortName, size, setState }) => {
                   size,
                   slug: slugify(name)
                 });
+                setState(() => ({ name: "", shortName: "", size: "" }));
                 onClose();
               }}
             />
