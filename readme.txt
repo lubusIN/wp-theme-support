@@ -1,4 +1,4 @@
-=== Dummynator ===
+=== Theme Support ===
 Contributors: lubus,ajitbohra
 Donate link: http://www.lubus.in
 Tags: gutenberg, editor, theme, support 
@@ -27,13 +27,13 @@ If you have any suggestions/Feature request that you would like to see in the up
 == Installation ==
 ***From your WordPress dashboard***
  1. Visit 'Plugins > Add New'
- 2. Search for `WP Theme Support`  or upload zip file
- 3. Activate `WP Theme Support` from your Plugins page
+ 2. Search for `Theme Support`  or upload zip file
+ 3. Activate `Theme Support` from your Plugins page
 
 ***Manual Installation***
- 1. [Download](https://wordpress.org/plugins/wp-theme-support/) "Theme Support".
- 2. Upload the `wp-theme-support` directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
- 3. Activate `WP Theme Support` from your Plugins page.
+ 1. [Download](https://wordpress.org/plugins/theme-support/) "Theme Support".
+ 2. Upload the `theme-support` directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
+ 3. Activate `Theme Support` from your Plugins page.
 
 == Screenshots ==
 

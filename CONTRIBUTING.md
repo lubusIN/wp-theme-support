@@ -1,7 +1,7 @@
 **Contribution Guide**
 ----------------------
 
-This page contains guidelines for contributing 'WP Theme Support'. Please review these guidelines before submitting any pull requests to this package.
+This page contains guidelines for contributing 'Theme Support'. Please review these guidelines before submitting any pull requests to this package.
 
 ***Pull Requests***
 

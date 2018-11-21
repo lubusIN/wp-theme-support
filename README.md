@@ -1,7 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/lubusIN/wp-theme-support/master/.wordpress-org/logo.png"></p>
 
 <p align="center">
-<a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/wordpress/plugin/v/wp-theme-support.svg" alt="Latest Stable Version"></a> <a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/wordpress/v/wp-theme-support.svg" alt="Version Tested"></a> <a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/wordpress/plugin/dt/wp-theme-support.svg" alt="Downloads"></a> <a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/wordpress/plugin/r/wp-theme-support.svg" alt="Rating"></a> <a href="https://wordpress.org/plugins/wp-theme-support/"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="Licence"></a>
+<a href="https://wordpress.org/plugins/theme-support/"><img src="https://img.shields.io/wordpress/plugin/v/theme-support.svg" alt="Latest Stable Version"></a> <a href="https://wordpress.org/plugins/theme-support/"><img src="https://img.shields.io/wordpress/v/theme-support.svg" alt="Version Tested"></a> <a href="https://wordpress.org/plugins/theme-support/"><img src="https://img.shields.io/wordpress/plugin/dt/theme-support.svg" alt="Downloads"></a> <a href="https://wordpress.org/plugins/theme-support/"><img src="https://img.shields.io/wordpress/plugin/r/theme-support.svg" alt="Rating"></a> <a href="https://wordpress.org/plugins/theme-support/"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="Licence"></a>
 <a href="https://github.com/lubusin/wp-theme-support/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs"></a>
 </p>
 
@@ -26,13 +26,13 @@ If you have any suggestions/feature request that you would like to see in the up
 
 ***From your WordPress dashboard***
  1. Visit 'Plugins > Add New'
- 2. Search for `WP Theme Support`  or upload zip file
- 3. Activate `WP Theme Support` from your Plugins page
+ 2. Search for `Theme Support`  or upload zip file
+ 3. Activate `Theme Support` from your Plugins page
 
 ## Manual Installation
- 1. [Download](https://wordpress.org/plugins/wp-theme-support/) "WP Theme Support".
- 2. Upload the `wp-theme-support` directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
- 3. Activate `WP Theme Support` from your Plugins page.
+ 1. [Download](https://wordpress.org/plugins/theme-support/) "WP Theme Support".
+ 2. Upload the `theme-support` directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
+ 3. Activate `Theme Support` from your Plugins page.
 
 ## Usage
 
@@ -44,7 +44,7 @@ If you have any suggestions/feature request that you would like to see in the up
 Please see the [Changelog](CHANGELOG.md) 
 ## Contributing
 
-Thank you for considering contributing to the `WP Theme Support`. You can read the contribution guide lines [here](CONTRIBUTING.md)
+Thank you for considering contributing to the `Theme Support`. You can read the contribution guide lines [here](CONTRIBUTING.md)
 
 Check the development tasklist [here](https://github.com/lubusIN/wp-theme-support/projects/1) if something interest you or suggest something [here](https://github.com/lubusIN/wp-theme-support/issues)
 
@@ -77,15 +77,13 @@ If you discover any security related issues, please email to [ajit@lubus.in](mai
 	</tr>
 	<tr>
 		<td width="33.33%">
-			<strong><i>Work In Progress ...</i>
+			<strong><i>More coming soon ...</i>
 		</td>
 		<td width="33.33%">
-			<strong><i>Coming Soon ...</i>
+			&nbsp;
 		</td>
 		<td width="33.33%">
-			<strong>
-				<i>Coming Soon ...</i>
-			</strong>
+			&nbsp;
 		</td>
 	</tr>
 </table>
@@ -102,4 +100,4 @@ You can pledge on [patreon](https://www.patreon.com/lubus) to support the develo
 
 ## License
 
-`WP Theme Support` is open-sourced software licensed under the [GPL 3.0 license](LICENSE)
+`Theme Support` is open-sourced software licensed under the [GPL 3.0 license](LICENSE)
