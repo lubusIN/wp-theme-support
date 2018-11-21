@@ -25,12 +25,12 @@ If you have any suggestions/feature request that you would like to see in the up
 ## Installation
 
 ***From your WordPress dashboard***
- 1. Visit 'Plugins > Add New'
+ 1. Visit `Plugins > Add New`
  2. Search for `Theme Support`  or upload zip file
  3. Activate `Theme Support` from your Plugins page
 
 ## Manual Installation
- 1. [Download](https://wordpress.org/plugins/theme-support/) "WP Theme Support".
+ 1. [Download](https://wordpress.org/plugins/theme-support/) "Theme Support".
  2. Upload the `theme-support` directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
  3. Activate `Theme Support` from your Plugins page.
 

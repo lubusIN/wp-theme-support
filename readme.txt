@@ -26,7 +26,7 @@ If you have any suggestions/Feature request that you would like to see in the up
 
 == Installation ==
 ***From your WordPress dashboard***
- 1. Visit 'Plugins > Add New'
+ 1. Visit `Plugins > Add New`
  2. Search for `Theme Support`  or upload zip file
  3. Activate `Theme Support` from your Plugins page
 
