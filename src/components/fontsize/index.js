@@ -4,7 +4,7 @@
 import { Fragment } from "@wordpress/element";
 import { TextControl, IconButton, PanelRow } from "@wordpress/components";
 
-const FontSize = ({ name, shortName, value, onDelete, onUpdate }) => {
+const FontSize = ({ name, value, onDelete, onUpdate }) => {
   // Update color
   const onChange = (key, value) => {
     onUpdate(key, value);
@@ -12,18 +12,12 @@ const FontSize = ({ name, shortName, value, onDelete, onUpdate }) => {
 
   return (
     <Fragment>
-      <TextControl
-        label="Name"
-        value={name}
-        className="wp-theme-support-sidebar__fontsize-name"
-        onChange={value => onChange("name", value)}
-      />
       <PanelRow className="wp-theme-support-sidebar__fontsize">
         <TextControl
-          label="Short name"
-          value={shortName}
-          className="wp-theme-support-sidebar__fontsize-short-name"
-          onChange={value => onChange("short", value)}
+          label="Name"
+          value={name}
+          className="wp-theme-support-sidebar__fontsize-name"
+          onChange={value => onChange("name", value)}
         />
         <TextControl
           type="number"

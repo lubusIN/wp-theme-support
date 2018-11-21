@@ -6,14 +6,14 @@
  * Description: Quickly config theme support using UI
  * Author: LUBUS
  * Author URI: https://lubus.in
- * Version: 0.1.0
+ * Version: 0.1.1
  * Text Domain: lts
  * Domain Path: /languages
  * GitHub Plugin URI: https://github.com/lubusIN/wp-theme-support
  * Tags: gutenberg, editor, theme, support
  * Requires at least: 3.0.1
  * Tested up to:  4.9.4
- * Stable tag: 0.1.0
+ * Stable tag: 0.1.1
  * License: GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *

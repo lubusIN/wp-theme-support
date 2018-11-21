@@ -22,7 +22,7 @@ import {
 import "./style.scss";
 
 // Component
-const add = ({ onAdd, name, shortName, size, setState }) => {
+const add = ({ onAdd, name, size, setState }) => {
   return (
     <Dropdown
       className="wp-theme-support-sidebar__fontsize-add-container"
@@ -40,18 +40,12 @@ const add = ({ onAdd, name, shortName, size, setState }) => {
       )}
       renderContent={({ onClose }) => (
         <div className="wp-theme-support-sidebar__fontsize-wrapper">
-          <TextControl
-            label="Name"
-            value={name}
-            className="wp-theme-support-sidebar__fontsize-name"
-            onChange={name => setState(() => ({ name }))}
-          />
           <PanelRow className="wp-theme-support-sidebar__fontsize">
             <TextControl
-              label="Short name"
-              value={shortName}
-              className="wp-theme-support-sidebar__fontsize-short-name"
-              onChange={shortName => setState(() => ({ shortName }))}
+              label="Name"
+              value={name}
+              className="wp-theme-support-sidebar__fontsize-name"
+              onChange={name => setState(() => ({ name }))}
             />
             <TextControl
               type="number"
@@ -62,18 +56,17 @@ const add = ({ onAdd, name, shortName, size, setState }) => {
             />
             <IconButton
               className="wp-theme-support-sidebar__fontsize-save"
-              disabled={isEmpty(name) || isEmpty(shortName) || isEmpty(size)}
+              disabled={isEmpty(name) || isEmpty(size)}
               label="Save"
               icon="yes"
               isPrimary={true}
               onClick={() => {
                 onAdd({
                   name,
-                  shortName,
-                  size,
-                  slug: slugify(name)
+                  slug: slugify(name),
+                  size
                 });
-                setState(() => ({ name: "", shortName: "", size: "" }));
+                setState(() => ({ name: "", size: "" }));
                 onClose();
               }}
             />
@@ -84,4 +77,4 @@ const add = ({ onAdd, name, shortName, size, setState }) => {
   );
 };
 
-export default withState({ name: "", shortName: "", size: "" })(add);
+export default withState({ name: "", size: "" })(add);

@@ -52,7 +52,6 @@ const FontSizes = () => {
             <FontSize
               key={index}
               name={fontsize.name}
-              shortName={fontsize.shortName}
               value={fontsize.size}
               onDelete={() => onDelete(context, index)}
               onUpdate={(key, value) => onUpdate(context, index, key, value)}

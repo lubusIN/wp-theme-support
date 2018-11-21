@@ -4,7 +4,7 @@ Donate link: http://www.lubus.in
 Tags: gutenberg, editor, theme, support 
 Requires at least: 3.0.1
 Tested up to:  4.9.4
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,6 +40,12 @@ If you have any suggestions/Feature request that you would like to see in the up
 1. Plugin in action
 
 == Changelog ==
+
+***v0.1.1***
+
+Released on 21 Nov 2018
+
+ - Remove shortname from fontsizes
 
 ***v0.1.0***
 
