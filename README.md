@@ -17,11 +17,6 @@ Helps yoou quickly config theme support using UI.
 
 ![Plugin Demo](https://raw.githubusercontent.com/lubusIN/wp-theme-support/master/.wordpress-org/screenshot-1.gif)
 
-## Feedback / Suggestions
-
-If you have any suggestions/feature request that you would like to see in the upcoming releases, feel free to let us know in the [issues section](https://github.com/lubusIN/wp-theme-support/issues)
-
-
 ## Installation
 
 ***From your WordPress dashboard***
@@ -42,6 +37,11 @@ If you have any suggestions/feature request that you would like to see in the up
 ## Changelog
 
 Please see the [Changelog](CHANGELOG.md) 
+
+## Feedback / Suggestions
+
+If you have any suggestions/feature request that you would like to see in the upcoming releases, feel free to let us know in the [issues section](https://github.com/lubusIN/wp-theme-support/issues)
+
 ## Contributing
 
 Thank you in advance if you wish to contribute to the `Theme Support`. You can read the contribution guide lines [here](CONTRIBUTING.md)
